@@ -1,14 +1,37 @@
 import { createBrowserRouter } from "react-router";
-
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import PrivateRoute from "./PrivateRoute";
+import ToyDetails from "../pages/ToyDetails";
+import App from "../App";
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <h1>Home</h1>
-    },
-    {
+  {
+    path: "/",
+    element: <App></App>,
+    children: [
+      {
+        index: true,
+        element: <Home></Home>,
+      },
+      {
         path: "/toydetails",
-        element: <h1>Toy Details</h1>
-    }
-])
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+]);
 
 export default router;

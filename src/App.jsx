@@ -1,10 +1,10 @@
+import { Outlet } from "react-router";
 
-
-function App() {  
+function App() {
   return (
     <>
       <div>
-        <h1 className="font-bold">Hi</h1>
+        <Outlet></Outlet>
       </div>
     </>
   );
