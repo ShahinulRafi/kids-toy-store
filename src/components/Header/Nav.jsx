@@ -56,11 +56,9 @@ const Nav = () => {
                   </a>
                 </li>
 
-                {user && (
-                  <li>
-                    <NavLink to="/profile">Profile</NavLink>
-                  </li>
-                )}
+                <li>
+                  <NavLink to="/profile">Profile</NavLink>
+                </li>
               </ul>
             </div>
             <a className="btn btn-ghost text-xl -mx-4 md:mx-1">
@@ -85,11 +83,9 @@ const Nav = () => {
                 </a>
               </li>
 
-              {user && (
-                <li>
-                  <NavLink to="/profile">Profile</NavLink>
-                </li>
-              )}
+              <li>
+                <NavLink to="/profile">Profile</NavLink>
+              </li>
             </ul>
           </div>
           <div className="navbar-end">
