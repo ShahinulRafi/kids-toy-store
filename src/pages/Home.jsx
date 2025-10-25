@@ -13,6 +13,7 @@ const Home = () => {
   console.log(user);
   return (
     <div>
+      <title>Home - Kids Toy Store</title>
       <main>
         <section>
           <Slider></Slider>

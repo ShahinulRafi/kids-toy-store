@@ -27,6 +27,7 @@ const ForgotPassword = () => {
   };
   return (
     <div>
+      <title>Forgot Password - Kids Toy Store</title>
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content w-full lg:flex-row-reverse">
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

@@ -14,6 +14,7 @@ const AllToys = () => {
 
   return (
     <div>
+      <title>All Toys - Kids Toy Store</title>
       <h2 className="text-3xl font-bold text-center my-8">
         Browse Different Toys
       </h2>

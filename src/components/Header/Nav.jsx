@@ -53,7 +53,7 @@ const Nav = () => {
 
                 {user && (
                   <li>
-                    <a>Profile</a>
+                    <NavLink to="/profile">Profile</NavLink>
                   </li>
                 )}
               </ul>
@@ -75,7 +75,7 @@ const Nav = () => {
 
               {user && (
                 <li>
-                  <a>Profile</a>
+                  <NavLink to="/profile">Profile</NavLink>
                 </li>
               )}
             </ul>
@@ -85,7 +85,12 @@ const Nav = () => {
               <a onClick={handleSignOut} className="btn">
                 <div className="flex gap-2 justify-between items-center">
                   <div>
-                    <img className="w-6 rounded" title={user.displayName} src={user.photoURL} alt="" />
+                    <img
+                      className="w-6 rounded"
+                      title={user.displayName}
+                      src={user.photoURL}
+                      alt=""
+                    />
                   </div>
                   <div>Sign Out</div>
                 </div>
