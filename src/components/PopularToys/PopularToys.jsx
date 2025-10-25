@@ -14,8 +14,8 @@ const PopularToys = () => {
   }, []);
 
   return (
-    <div className="my-10 flex flex-col items-center">
-      <div className="bg-amber-50 md:mx-20 rounded-xl md:p-10 py-10">
+    <div className="my-10 bg-amber-50 md:bg-none flex flex-col items-center">
+      <div className="md:bg-amber-50 md:mx-20 rounded-xl md:p-10 py-10">
         <h2 className="text-3xl font-semibold text-center mt-8">
           Popular Toys
         </h2>

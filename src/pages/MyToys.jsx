@@ -61,10 +61,10 @@ const MyToys = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center my-10 mx-20">
+    <div className="flex flex-col items-center my-10 md:mx-20">
         <title>My Toys</title>
       <h2 className="text-3xl font-bold text-center my-8">My Toys</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full px-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full md:px-10 justify-items-center">
         {demoToys.map((toy) => (
           <ToyCard key={toy.toyId} toy={toy} />
         ))}
