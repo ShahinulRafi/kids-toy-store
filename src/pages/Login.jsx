@@ -4,13 +4,14 @@ import { auth } from "../firebase/firebase.init";
 import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
 import { use } from "react";
+import { toast } from "react-toastify";
 
 // const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
   // const [user, setUser] = useState(null);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  // const [error, setError] = useState("");
+  // const [success, setSuccess] = useState("");
   const emailRef = useRef();
   const [email, setEmail] = useState("");
   const { signInUser, signInWithGoogle } = use(AuthContext);
@@ -22,11 +23,12 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        toast.success("Logged in with Google!");
         // setUser(result.user);
         navigate(location?.state || "/");
       })
-      .catch((eror) => {
-        console.log(eror);
+      .catch((error) => {
+        toast.error(error.message);
       });
   };
 
@@ -51,27 +53,28 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
-        setSuccess("Login Successful");
+        toast.success("Login Successful!");
         e.target.reset();
         navigate(location?.state || "/");
       })
       .catch((error) => {
-        alert(error.message);
-        setError(error.message);
+        toast.error(error.message);
+        // setError(error.message);
       });
 
-    setError("");
-    setSuccess("");
+    // setError("");
+    // setSuccess("");
 
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
+        // toast.success("Signed in!");
         // setSuccess("Login Successful");
         navigate(location?.state || "/");
       })
       .catch((error) => {
         console.log(error);
-        setError(error.message);
+        // toast.error(error.message);
       });
   };
 
@@ -131,8 +134,8 @@ const Login = () => {
                 </button>
 
                 <div>
-                  {success && <p className="text-green-500">{success}</p>}
-                  {error && <p className="text-red-500">{error}</p>}
+                  {/* {success && <p className="text-green-500">{success}</p>}
+                  {error && <p className="text-red-500">{error}</p>} */}
                 </div>
               </form>
             </div>

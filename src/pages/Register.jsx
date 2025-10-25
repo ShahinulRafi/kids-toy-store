@@ -4,6 +4,7 @@ import { auth } from "../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [success, setSuccess] = useState(false);
@@ -29,20 +30,20 @@ const Register = () => {
     setError("");
 
     if (!checked) {
-      setError("You must accept terms and conditions");
+      toast.error("You must accept terms and conditions");
       return;
     }
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordPattern.test(password)) {
-      setError(
+      toast.error(
         "Password must be at least 6 characters long and contain at least one uppercase and one lowercase letter."
       );
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        console.log("New user created", result.user);
-        setSuccess(true);
+        // console.log("New user created", result.user);
+        toast.success("Registration successful!");
 
         updateProfile(result.user, {
           displayName: name,
@@ -59,7 +60,7 @@ const Register = () => {
       })
       .catch((error) => {
         (error) => console.log(error);
-        setError(error.message);
+        toast.error(error.message);
       });
   };
   const handleShowPassword = (e) => {
