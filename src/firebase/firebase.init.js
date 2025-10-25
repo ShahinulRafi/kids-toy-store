@@ -1,3 +1,5 @@
+/* global process */
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -6,12 +8,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD51hzGICXrNsmjQe_DAdVOyVUBaydA_Xk",
-  authDomain: "kids-toy-store-65d11.firebaseapp.com",
-  projectId: "kids-toy-store-65d11",
-  storageBucket: "kids-toy-store-65d11.firebasestorage.app",
-  messagingSenderId: "56650588525",
-  appId: "1:56650588525:web:fb7e0a91af2fee9118ba64"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
