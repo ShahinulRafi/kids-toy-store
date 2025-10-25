@@ -58,7 +58,7 @@ const Nav = () => {
                 )}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">Kids Toy Store</a>
+            <a className="btn btn-ghost text-xl -mx-4 md:mx-1">Kids Toy Store</a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
