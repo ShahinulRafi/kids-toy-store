@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import ToyCard from "./ToyCard";
-import { Link } from "react-router";
+import ToyCard from "../components/PopularToys/ToyCard";
 
-const PopularToys = () => {
+const AllToys = () => {
   const [popular, setPopular] = useState([]);
 
   useEffect(() => {
-    fetch("/toys.json")
+    fetch("/allToys.json")
       .then((res) => res.json())
       .then((data) => {
         setPopular(data);
@@ -15,19 +14,18 @@ const PopularToys = () => {
 
   return (
     <div>
-      <div className="mx-20 border-2 m-10">
-        <h2 className="text-3xl font-bold text-center my-8">Popular Toys</h2>
+      <h2 className="text-3xl font-bold text-center my-8">
+        Browse Different Toys
+      </h2>
+      <div className="mx-20 py-10 border-2 rounded border-amber-300 m-10">
         <div className="flex-col gap-10 mx-auto items-center md:grid md:grid-cols-3 md:gap-0 md:ml-10">
           {popular.map((toy) => (
             <ToyCard key={popular.toyId} toy={toy}></ToyCard>
           ))}
         </div>
-        <Link className="text-center items-center" to="/alltoys">
-        <button className="btn btn-outline">All Toys</button>
-        </Link>
       </div>
     </div>
   );
 };
 
-export default PopularToys;
+export default AllToys;

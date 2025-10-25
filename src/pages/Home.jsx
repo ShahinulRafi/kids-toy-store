@@ -5,16 +5,14 @@ import Footer from "../components/Footer/Footer";
 import Slider from "../components/Slider/Slider";
 import PopularToys from "../components/PopularToys/PopularToys";
 import { AuthContext } from "../contexts/AuthContext";
+import Marketing from "../components/Marketing.jsx/Marketing";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 const Home = () => {
-  const {user} = use(AuthContext);
-  console.log(user)
+  const { user } = use(AuthContext);
+  console.log(user);
   return (
     <div>
-
-      <header>
-        <Nav></Nav>
-      </header>
       <main>
         <section>
           <Slider></Slider>
@@ -23,10 +21,13 @@ const Home = () => {
           <PopularToys></PopularToys>
         </section>
         {/* <Outlet></Outlet> */}
+        <section>
+          <Marketing></Marketing>
+        </section>
+        <section>
+          <Testimonial>s</Testimonial>
+        </section>
       </main>
-      <footer>
-        <Footer></Footer>
-      </footer>
     </div>
   );
 };

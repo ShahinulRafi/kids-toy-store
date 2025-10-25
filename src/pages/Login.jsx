@@ -1,11 +1,7 @@
-import {
-  GoogleAuthProvider,
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useRef, useState } from "react";
 import { auth } from "../firebase/firebase.init";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
 import { use } from "react";
 
@@ -16,6 +12,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const emailRef = useRef();
+  const [email, setEmail] = useState("");
   const { signInUser, signInWithGoogle } = use(AuthContext);
   // const {signOutUser} = use(AuthContext);
   const location = useLocation();
@@ -78,18 +75,6 @@ const Login = () => {
       });
   };
 
-  const ForgotPassword = (e) => {
-    e.preventDefault();
-    console.log("Forgot Password Clicked");
-    sendPasswordResetEmail(auth, emailRef.current.value)
-      .then(() => {
-        alert("Password reset email sent. Please check your inbox.");
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(error.message);
-      });
-  };
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
@@ -97,9 +82,7 @@ const Login = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Login and experience the best toy marketplace ever!
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -113,6 +96,7 @@ const Login = () => {
                     className="input"
                     placeholder="Email"
                     ref={emailRef}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                   <label className="label">Password</label>
                   <input
@@ -121,8 +105,12 @@ const Login = () => {
                     className="input"
                     placeholder="Password"
                   />
-                  <div onClick={ForgotPassword}>
-                    <p className="link">Forgot Password?</p>
+                  <div>
+                    <p className="link">
+                      <Link state={{ email }} to="/forgotpassword">
+                        Forgot Password?
+                      </Link>
+                    </p>
                   </div>
                   <div>
                     <p>
@@ -132,8 +120,14 @@ const Login = () => {
                       </Link>
                     </p>
                   </div>
-                  <button className="btn btn-neutral mt-4">Login</button>
+                  <button className="btn btn-secondary mt-4">Login</button>
                 </fieldset>
+                <button
+                  onClick={handleGoogleSignIn}
+                  className="btn btn-outline w-full mt-2"
+                >
+                  Login With Google
+                </button>
 
                 <div>
                   {success && <p className="text-green-500">{success}</p>}
@@ -144,10 +138,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
-      <button onClick={handleGoogleSignIn} className="btn btn-outline">
-        Login With Google
-      </button>
 
       {/* <div>{user && <h2>{user.displayName}</h2>}</div> */}
     </div>

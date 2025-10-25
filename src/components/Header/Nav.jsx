@@ -41,25 +41,19 @@ const Nav = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 <li>
-                  <a>Item 1</a>
+                  <a>
+                    <NavLink to="/">Home</NavLink>
+                  </a>
                 </li>
                 <li>
-                  <a>Parent</a>
-                  <ul className="p-2">
-                    <li>
-                      <a>Submenu 1</a>
-                    </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
-                  </ul>
+                  <a>
+                    <NavLink to="/alltoys">All Toys</NavLink>
+                  </a>
                 </li>
-                <li>
-                  <NavLink to="/toydetails">Toy Details</NavLink>
-                </li>
+
                 {user && (
                   <li>
-                    <a>Item 3</a>
+                    <a>Profile</a>
                   </li>
                 )}
               </ul>
@@ -69,13 +63,14 @@ const Nav = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <a>Item 1</a>
+                <a>
+                  <NavLink to="/">Home</NavLink>
+                </a>
               </li>
               <li>
-                <a>Parent</a>
-              </li>
-              <li>
-                <a>Item 3</a>
+                <a>
+                  <NavLink to="/alltoys">All Toys</NavLink>
+                </a>
               </li>
 
               {user && (
@@ -88,10 +83,17 @@ const Nav = () => {
           <div className="navbar-end">
             {user ? (
               <a onClick={handleSignOut} className="btn">
-                Sign Out
+                <div className="flex gap-2 justify-between items-center">
+                  <div>
+                    <img className="w-6 rounded" title={user.displayName} src={user.photoURL} alt="" />
+                  </div>
+                  <div>Sign Out</div>
+                </div>
               </a>
             ) : (
-              <a className="btn">Login</a>
+              <a className="btn">
+                <NavLink to="/login">Login</NavLink>
+              </a>
             )}
           </div>
         </div>

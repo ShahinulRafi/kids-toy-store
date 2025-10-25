@@ -1,4 +1,8 @@
-import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  updateProfile,
+} from "firebase/auth";
 import React, { use, useState } from "react";
 import { auth } from "../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -9,7 +13,7 @@ const Register = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const {createUser} = use(AuthContext);
+  const { createUser } = use(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -18,18 +22,19 @@ const Register = () => {
       e.target.email.value,
       e.target.password.value
     );
+    const name = e.target.name.value;
+    const photoURL = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const checked = e.target.terms.checked;
-
     createUser(email, password);
 
     setSuccess(false);
     setError("");
 
-    if(!checked){
-        setError("You must accept terms and conditions");
-        return;
+    if (!checked) {
+      setError("You must accept terms and conditions");
+      return;
     }
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordPattern.test(password)) {
@@ -42,14 +47,19 @@ const Register = () => {
       .then((result) => {
         console.log("New user created", result.user);
         setSuccess(true);
+        
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photoURL,
+        }).catch((error) => console.log("Profile update error:", error));
 
         sendEmailVerification(result.user)
-        .then(() => {
-            alert("Verification email sent")
-        })
-        .catch((error) => {
+          .then(() => {
+            alert("Verification email sent");
+          })
+          .catch((error) => {
             alert(error.message);
-        });
+          });
       })
       .catch((error) => {
         (error) => console.log(error);
@@ -76,12 +86,27 @@ const Register = () => {
             <div className="card-body">
               <form onSubmit={handleRegister}>
                 <fieldset className="fieldset">
+                  <label className="label">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    className="input"
+                    placeholder="Your Name"
+                  />
+
                   <label className="label">Email</label>
                   <input
                     type="email"
                     name="email"
                     className="input"
                     placeholder="Email"
+                  />
+                  <label className="label">Photo URL</label>
+                  <input
+                    type="text"
+                    name="photoURL"
+                    className="input"
+                    placeholder="Photo URL"
                   />
                   <label className="label">Password</label>
                   <div className="relative">
@@ -115,7 +140,12 @@ const Register = () => {
                     </fieldset>
                   </div>
                   <div>
-                    <p>Already have an account? <Link className="text-blue-500" to="/login">Login</Link></p>
+                    <p>
+                      Already have an account?{" "}
+                      <Link className="text-blue-500" to="/login">
+                        Login
+                      </Link>
+                    </p>
                   </div>
                   <button className="btn btn-neutral mt-4">Register</button>
                 </fieldset>
