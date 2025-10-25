@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import { toast } from "react-toastify";
 
 const ToyDetails = () => {
   const toy = useLoaderData();
@@ -7,7 +8,7 @@ const ToyDetails = () => {
   const handleTryNow = (e) => {
     e.preventDefault();
     console.log(e.target.email.value, e.target.name.value);
-    alert("Thank you for trying the toy!");
+    toast.success("Thank you for trying the toy!");
   }
   return (
     <div className="max-w-6xl mx-auto p-6">

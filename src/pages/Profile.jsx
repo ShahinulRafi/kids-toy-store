@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -14,22 +15,25 @@ const Profile = () => {
     e.preventDefault();
     setSuccess(false);
     setError("");
-
+    if(!name || !photoURL){
+      toast.error("Name and Photo URL cannot be empty.");
+      return;
+    }
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photoURL,
     })
       .then(() => {
-        setSuccess(true);
+        toast.success("Profile updated successfully!");
       })
       .catch((err) => {
-        setError(err.message);
+        toast.error("Error updating profile: " + err.message);
       });
   };
 
   return (
     <div>
-        <title>Profile - Kids Toy Store</title>
+      <title>Profile - Kids Toy Store</title>
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           {/* User info text */}
@@ -68,6 +72,7 @@ const Profile = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="input"
+                    necessary
                     placeholder="Your Name"
                   />
 
@@ -77,6 +82,7 @@ const Profile = () => {
                     value={photoURL}
                     onChange={(e) => setPhotoURL(e.target.value)}
                     className="input"
+                    necessary
                     placeholder="Photo URL"
                   />
 
