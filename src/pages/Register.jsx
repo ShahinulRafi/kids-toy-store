@@ -24,11 +24,15 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const checked = e.target.terms.checked;
-    createUser(email, password);
 
     setSuccess(false);
     setError("");
 
+    if(!name || !email || !photoURL || !password)
+    {
+      toast.error("You must fill all the input fields to register!")
+      return;
+    }
     if (!checked) {
       toast.error("You must accept terms and conditions");
       return;
@@ -40,6 +44,8 @@ const Register = () => {
       );
       return;
     }
+
+    createUser(email, password);
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         // console.log("New user created", result.user);
@@ -74,11 +80,7 @@ const Register = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Register now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+            <p className="py-6">Register and enjoy browsing our toystore!</p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
@@ -126,7 +128,7 @@ const Register = () => {
                     </button>
                   </div>
                   <div>
-                    <fieldset className="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4">
+                    <fieldset className="fieldset bg-base-100 w-full rounded-box">
                       <label className="label">
                         <input
                           type="checkbox"
@@ -145,7 +147,7 @@ const Register = () => {
                       </Link>
                     </p>
                   </div>
-                  <button className="btn btn-neutral mt-4">Register</button>
+                  <button className="btn btn-secondary mt-4">Register</button>
                 </fieldset>
                 {error && <p className="text-red-500">{error}</p>}
                 {success && <p className="text-green-500">Yup, successful</p>}

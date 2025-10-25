@@ -15,7 +15,7 @@ const Profile = () => {
     e.preventDefault();
     setSuccess(false);
     setError("");
-    if(!name || !photoURL){
+    if(!name && !photoURL){
       toast.error("Name and Photo URL cannot be empty.");
       return;
     }
@@ -86,7 +86,7 @@ const Profile = () => {
                     placeholder="Photo URL"
                   />
 
-                  <button className="btn btn-neutral mt-4">Save Changes</button>
+                  <button className="btn btn-secondary mt-4">Save Changes</button>
                 </fieldset>
 
                 {error && <p className="text-red-500">{error}</p>}

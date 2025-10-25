@@ -94,7 +94,7 @@ const Nav = () => {
                 <div className="flex gap-2 justify-between items-center">
                   <div>
                     <img
-                      className="w-6 rounded"
+                      className="w-4 rounded"
                       title={user.displayName}
                       src={user.photoURL}
                       alt=""

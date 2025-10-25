@@ -4,7 +4,7 @@
 
 **Kids Toy Store** is an interactive web application designed to showcase and sell toys for children. The platform allows users to browse popular toys, view detailed information, and explore different toy categories. This project demonstrates modern web development techniques using React and Tailwind CSS.
 
-**Live URL:** []
+**Live URL:** [https://kids-toy-store-shahinul.netlify.app/]
 
 ---
 
