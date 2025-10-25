@@ -1,13 +1,14 @@
 import { sendPasswordResetEmail } from "firebase/auth";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { auth } from "../firebase/firebase.init";
 import { Link, Navigate, useLocation } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
   // const [user, setUser] = useState(null);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  // const [error, setError] = useState("");
+  // const [success, setSuccess] = useState("");
   const emailRef = useRef();
   const location = useLocation();
   console.log("login location", location?.state);
@@ -18,11 +19,11 @@ const ForgotPassword = () => {
     sendPasswordResetEmail(auth, emailRef.current.value)
       .then(() => {
         // alert("Password reset email sent. Please check your inbox.");
-        setSuccess("Password reset email sent. Please check your inbox.");
+        toast.success("Password reset email sent. Please check your inbox.");
       })
       .catch((error) => {
         console.log(error);
-        setError(error.message);
+        toast.error(error.message);
       });
   };
   return (
@@ -53,10 +54,10 @@ const ForgotPassword = () => {
                   </button>
                 </fieldset>
 
-                <div>
+                {/* <div>
                   {success && <p className="text-green-500">{success}</p>}
                   {error && <p className="text-red-500">{error}</p>}
-                </div>
+                </div> */}
               </form>
             </div>
           </div>

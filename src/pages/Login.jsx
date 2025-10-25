@@ -1,6 +1,6 @@
-import { GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useRef, useState } from "react";
-import { auth } from "../firebase/firebase.init";
+// import { auth } from "../firebase/firebase.init";
 import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
 import { use } from "react";
@@ -65,17 +65,17 @@ const Login = () => {
     // setError("");
     // setSuccess("");
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((result) => {
-        console.log(result.user);
-        // toast.success("Signed in!");
-        // setSuccess("Login Successful");
-        navigate(location?.state || "/");
-      })
-      .catch((error) => {
-        console.log(error);
-        // toast.error(error.message);
-      });
+    // signInWithEmailAndPassword(auth, email, password)
+    //   .then((result) => {
+    //     console.log(result.user);
+    //     toast.success("Signed in!");
+    //     // setSuccess("Login Successful");
+    //     navigate(location?.state || "/");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     toast.error(error.message);
+    //   });
   };
 
   return (
@@ -127,6 +127,7 @@ const Login = () => {
                   <button className="btn btn-secondary mt-4">Login</button>
                 </fieldset>
                 <button
+                type="button"
                   onClick={handleGoogleSignIn}
                   className="btn btn-outline w-full mt-2"
                 >
