@@ -7,8 +7,8 @@
     "price": 49.99,
     "rating": 4.7,
     "availableQuantity": 75,
-    "description": "A timeless set of colorful Lego bricks that encourages creativity and problem-solving. Kids can build anything they imagine, from houses to vehicles.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    "description": "A timeless set of colorful Lego bricks that encourages creativity and problem-solving. Kids can build anything they imagine",
+    "pictureURL": "https://cdn.pixabay.com/photo/2017/07/25/22/54/lego-2539844_1280.jpg",
     "subCategory": "Building Blocks"
   },
   {
@@ -20,7 +20,7 @@
     "rating": 4.8,
     "availableQuantity": 120,
     "description": "Soft, cuddly, and perfect for bedtime snuggles. This plush teddy bear brings comfort and joy to children of all ages.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    "pictureURL": "https://media.istockphoto.com/id/167154546/photo/cute-teddy-bear-isolated-on-white-background.jpg?s=2048x2048&w=is&k=20&c=ecZbvDgOAg4T624CWRcgHxoOcTJ3IL8nia_vGBcWpjc=",
     "subCategory": "Soft Toys"
   },
   {
@@ -32,7 +32,7 @@
     "rating": 4.6,
     "availableQuantity": 45,
     "description": "Classic wooden train set with magnetic connectors. Perfect for imaginative play while improving coordination and creativity.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    "pictureURL": "https://img.freepik.com/free-vector/wood-toy-train_24877-81937.jpg?t=st=1761380216~exp=1761383816~hmac=5cf9eced61ee096a06ff8546fc60189a529fc5f0dc4ea9d9cc69262d592dfb02&w=1480",
     "subCategory": "Vehicles & Trains"
   },
   {
@@ -44,7 +44,7 @@
     "rating": 4.5,
     "availableQuantity": 90,
     "description": "Kids can mold, shape, and extrude Play-Doh into fun shapes. Encourages sensory play and fine motor skill development.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    "pictureURL": "https://images.pexels.com/photos/20021300/pexels-photo-20021300.jpeg?_gl=1*v6r2e4*_ga*MTAyMjI5MDY1MC4xNzU3ODc3MDM1*_ga_8JE65Q40S6*czE3NjEzNzk2MTUkbzckZzEkdDE3NjEzODAxMDIkajYwJGwwJGgw",
     "subCategory": "Creative Toys"
   },
   {
@@ -56,7 +56,7 @@
     "rating": 4.9,
     "availableQuantity": 30,
     "description": "The ultimate Barbie Dreamhouse with multiple rooms, furniture, and accessories. Inspires imaginative storytelling and role play.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    "pictureURL": "https://images.pexels.com/photos/46178/teddy-bear-bear-children-toys-forest-46178.jpeg?_gl=1*1pn22h5*_ga*MTAyMjI5MDY1MC4xNzU3ODc3MDM1*_ga_8JE65Q40S6*czE3NjEzNzk2MTUkbzckZzEkdDE3NjEzODAwMzYkajU3JGwwJGgw",
     "subCategory": "Dolls & Accessories"
   },
   {
@@ -68,7 +68,7 @@
     "rating": 4.4,
     "availableQuantity": 65,
     "description": "High-speed racing fun with loops, jumps, and connectors. Perfect for young car enthusiasts who love action-packed play.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    "pictureURL": "https://images.pexels.com/photos/14401638/pexels-photo-14401638.jpeg?_gl=1*nv02s5*_ga*MTAyMjI5MDY1MC4xNzU3ODc3MDM1*_ga_8JE65Q40S6*czE3NjEzNzk2MTUkbzckZzEkdDE3NjEzNzk3MTUkajIxJGwwJGgw",
     "subCategory": "Vehicles & Tracks"
   },
   {
@@ -104,7 +104,7 @@
     "rating": 4.5,
     "availableQuantity": 50,
     "description": "Compact wooden train set for small spaces.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    "pictureURL": "https://cdn.pixabay.com/photo/2017/07/25/22/54/lego-2539844_1280.jpg",
     "subCategory": "Vehicles & Trains"
   },
   {
@@ -116,79 +116,7 @@
     "rating": 4.6,
     "availableQuantity": 70,
     "description": "Bigger Play-Doh set for endless fun.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    "subCategory": "Creative Toys"
-  },
-  {
-    "toyId": 11,
-    "toyName": "Barbie Fashion Doll",
-    "sellerName": "StarTots",
-    "sellerEmail": "info@startots.com",
-    "price": 99.99,
-    "rating": 4.8,
-    "availableQuantity": 40,
-    "description": "Fashion Barbie with extra outfits.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    "subCategory": "Dolls & Accessories"
-  },
-  {
-    "toyId": 12,
-    "toyName": "Hot Wheels Racing Set",
-    "sellerName": "SpeedyKids",
-    "sellerEmail": "orders@speedykids.com",
-    "price": 69.0,
-    "rating": 4.5,
-    "availableQuantity": 50,
-    "description": "Advanced track set for high-speed racing.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    "subCategory": "Vehicles & Tracks"
-  },
-  {
-    "toyId": 13,
-    "toyName": "Lego Advanced Set",
-    "sellerName": "Toys R Us Local",
-    "sellerEmail": "contact@toysruslocal.com",
-    "price": 79.99,
-    "rating": 4.8,
-    "availableQuantity": 50,
-    "description": "Challenging Lego set for older kids.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    "subCategory": "Building Blocks"
-  },
-  {
-    "toyId": 14,
-    "toyName": "Teddy Bear Duo Pack",
-    "sellerName": "Happy Kids Store",
-    "sellerEmail": "sales@happykids.com",
-    "price": 44.5,
-    "rating": 4.7,
-    "availableQuantity": 60,
-    "description": "Two soft teddy bears for double the fun.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    "subCategory": "Soft Toys"
-  },
-  {
-    "toyId": 15,
-    "toyName": "Wooden Train Expansion",
-    "sellerName": "Little Tracks Co.",
-    "sellerEmail": "info@littletracks.com",
-    "price": 49.95,
-    "rating": 4.7,
-    "availableQuantity": 35,
-    "description": "Extra tracks and pieces to expand your train set.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    "subCategory": "Vehicles & Trains"
-  },
-  {
-    "toyId": 16,
-    "toyName": "Play-Doh Ultimate Pack",
-    "sellerName": "ColorCraft Toys",
-    "sellerEmail": "support@colorcraft.com",
-    "price": 39.99,
-    "rating": 4.7,
-    "availableQuantity": 55,
-    "description": "The largest Play-Doh set for creative fun.",
-    "pictureURL": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    "pictureURL": "https://media.istockphoto.com/id/167154546/photo/cute-teddy-bear-isolated-on-white-background.jpg?s=2048x2048&w=is&k=20&c=ecZbvDgOAg4T624CWRcgHxoOcTJ3IL8nia_vGBcWpjc=",
     "subCategory": "Creative Toys"
   }
 ]
