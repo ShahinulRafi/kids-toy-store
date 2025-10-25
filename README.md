@@ -1,16 +1,54 @@
-# React + Vite
+# Kids Toy Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+**Kids Toy Store** is an interactive web application designed to showcase and sell toys for children. The platform allows users to browse popular toys, view detailed information, and explore different toy categories. This project demonstrates modern web development techniques using React and Tailwind CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live URL:** []
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Purpose
 
-## Expanding the ESLint configuration
+The purpose of this project is to provide a responsive, user-friendly online store for toy enthusiasts, parents, and children. It emphasizes a seamless browsing experience, organized display of toy information, and intuitive UI design.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Key Features
+
+- **Responsive Design:** Works seamlessly on desktop, tablet, and mobile devices.
+- **Popular Toys Section:** Highlights trending toys for easy browsing.
+- **Category-Based Browsing:** Users can explore toys by categories such as Building Blocks, Soft Toys, Vehicles & Trains, Dolls & Accessories, and Creative Toys.
+- **Detailed Toy Pages:** Each toy has a dedicated page with description, price, rating, availability, and seller information.
+- **Interactive UI Components:** Buttons, badges, and carousel sliders enhance the user experience.
+- **Static Demo Page:** Fully populated demo page for showcasing sample toys.
+
+---
+
+## Technologies & Packages Used
+
+- **React** – JavaScript library for building user interfaces.
+- **Tailwind CSS** – Utility-first CSS framework for rapid styling.
+- **React Router** – Client-side routing for SPA navigation.
+- **DaisyUI** – Tailwind CSS component library.
+- **React Icons** – Popular icon library for React projects.
+- **npm** – Node package manager for installing dependencies.
+
+---
+
+## Installation & Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/kids-toy-store.git
+   Navigate to the project directory:
+   ```
+
+2. cd kids-toy-store
+
+3. Install dependencies: npm install
+
+4. Start the development server: npm start
+
+5. Open http://localhost:5173 to view the app in your browser.
