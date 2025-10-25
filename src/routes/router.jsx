@@ -9,6 +9,7 @@ import Profile from "../pages/Profile";
 import AllToys from "../pages/AllToys";
 import Error from "../pages/Error";
 import ForgotPassword from "../pages/ForgotPassword";
+import MyToys from "../pages/MyToys";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
           const toy = toys.find((t) => t.toyId === parseInt(params.toyId));
           return toy;
         },
-        element: <ToyDetails></ToyDetails>,
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/alltoys",
@@ -42,6 +47,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/mytoys",
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
           </PrivateRoute>
         ),
       },

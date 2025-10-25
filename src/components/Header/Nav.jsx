@@ -50,6 +50,11 @@ const Nav = () => {
                     <NavLink to="/alltoys">All Toys</NavLink>
                   </a>
                 </li>
+                <li>
+                  <a>
+                    <NavLink to="/mytoys">My Toys</NavLink>
+                  </a>
+                </li>
 
                 {user && (
                   <li>
@@ -58,7 +63,9 @@ const Nav = () => {
                 )}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl -mx-4 md:mx-1">Kids Toy Store</a>
+            <a className="btn btn-ghost text-xl -mx-4 md:mx-1">
+              <NavLink to="/">Kids Toy Store</NavLink>
+            </a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
@@ -70,6 +77,11 @@ const Nav = () => {
               <li>
                 <a>
                   <NavLink to="/alltoys">All Toys</NavLink>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <NavLink to="/mytoys">My Toys</NavLink>
                 </a>
               </li>
 

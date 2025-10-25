@@ -1,8 +1,4 @@
-import {
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  updateProfile,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { use, useState } from "react";
 import { auth } from "../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -47,19 +43,19 @@ const Register = () => {
       .then((result) => {
         console.log("New user created", result.user);
         setSuccess(true);
-        
+
         updateProfile(result.user, {
           displayName: name,
           photoURL: photoURL,
         }).catch((error) => console.log("Profile update error:", error));
 
-        sendEmailVerification(result.user)
-          .then(() => {
-            alert("Verification email sent");
-          })
-          .catch((error) => {
-            alert(error.message);
-          });
+        // sendEmailVerification(result.user)
+        //   .then(() => {
+        //     alert("Verification email sent");
+        //   })
+        //   .catch((error) => {
+        //     alert(error.message);
+        //   });
       })
       .catch((error) => {
         (error) => console.log(error);
